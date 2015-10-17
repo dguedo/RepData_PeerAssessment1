@@ -38,7 +38,7 @@ data = read.csv("activity.csv", header = T)
 For this part of the assignment, you can ignore the missing values in
 the dataset.
 
-1. Make a histogram of the total number of steps taken each day
+1) Make a histogram of the total number of steps taken each day
 
 
 ```r
@@ -50,7 +50,7 @@ hist(data_reduced$x, breaks=20, main = paste("Histogram of the total number of s
 
 ![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
 
-2. Calculate and report the **mean** and **median** total number of steps taken per day
+2) Calculate and report the **mean** and **median** total number of steps taken per day
 calculating the total number of steps taken each day
 
 Mean:
