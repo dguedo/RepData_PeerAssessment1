@@ -44,7 +44,8 @@ the dataset.
 ```r
 data$date=as.Date(data$date)
 data_reduced = aggregate(data$steps,by=list(data$date),FUN=sum, na.rm=TRUE)
-hist(data_reduced$x, breaks=20, main = paste("Histogram of the total number of steps taken each day"), xlab="Steps")
+hist(data_reduced$x, breaks=20, main = paste("Histogram of the total number of steps taken each day"), 
+     xlab="Steps")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
@@ -78,7 +79,8 @@ median(data_reduced$x)
 
 
 ```r
-average_steps <- aggregate(x = list(steps = data$steps), by = list(interval = data$interval), FUN = mean, na.rm = TRUE)
+average_steps <- aggregate(x = list(steps = data$steps), by = list(interval = data$interval), FUN = mean, 
+                           na.rm = TRUE)
 
 ggplot(data = average_steps, aes(x = interval, y = steps)) + geom_line() + xlab("5-minute interval") + 
     ylab("steps taken, averaged across all days")
@@ -142,7 +144,8 @@ data_replaced[idx,"steps"] = average_steps
 ```r
 data_replaced$date=as.Date(data_replaced$date)
 data_new = aggregate(data_replaced$steps,by=list(data_replaced$date),FUN=sum)
-hist(data_new$x, breaks=20, main = paste("Histogram of the total number of steps taken each day"), xlab="Steps")
+hist(data_new$x, breaks=20, main = paste("Histogram of the total number of steps taken each day"),
+     xlab="Steps")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
@@ -181,7 +184,8 @@ For this part the weekdays() function may be of some help here. Use the dataset 
 
 
 ```r
-data_replaced$weeksplit <- ifelse(weekdays(data_replaced$date) == "Saturday" | weekdays(data_replaced$date) == "Sunday", "Weekend", "Weekday")
+data_replaced$weeksplit <- ifelse(weekdays(data_replaced$date) == "Saturday" | 
+                                    weekdays(data_replaced$date) == "Sunday", "Weekend", "Weekday")
 data_replaced$weeksplit <- factor(data_replaced$weeksplit)
 ```
 
